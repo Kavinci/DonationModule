@@ -1,29 +1,45 @@
-﻿body {
-    font-family: 'Proxima Nova';
+﻿@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('Fonts/ProximaNova-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('Fonts/ProximaNova-Bold.woff') format('woff');
+}
+
+body {
+    font-family: 'ProximaNovaRegular';
     position: relative;
     color: #808080;
     background-color: #f2f2f2;
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.font-bold {
+    font-family: 'ProximaNovaBold';
 }
 
 .module {
-    width: 550px;
-    margin-left: 35%;
+    width: 370px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .goal-message-container {
     display: none;
     align-content: center;
-    width: 550px;
+    width: 370px;
     position: absolute;
 }
 
 .goal-message {
     border-radius: 10px;
-    height: 48px;
-    font-size: 22px;
+    height: 65px;
+    font-size: 18px;
     color: #ffffff;
-    line-height: 48px;
+    line-height: 65px;
     text-align: center;
     background-color: #093254;
 }
@@ -40,7 +56,7 @@
 
 .goal-title {
     color: #093254;
-    font-size: 48px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -64,7 +80,7 @@
 .card {
     margin-top: 0px;
     margin-bottom: 25px;
-    padding: 30px;
+    padding: 25px;
     background-color: #ffffff;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -84,20 +100,23 @@
 
 .submission-container {
     color: black;
-    font-size: 40px;
+    font-size: 30px;
     padding-bottom: 15px;
 }
 
 .amount-input {
     border-radius: 5px;
     border: thin solid #d7d4cf;
-    height: 60px;
-    width: 175px;
-    font-size: 40px;
+    height: 56px;
+    width: 100px;
+    font-family: 'ProximaNovaRegular';
+    font-size: 36px;
     padding-left: 10px;
 }
 
 .donate {
+    width: 143px;
+    height: 60px;
     background-color: #8bbe0f;
     border: thin solid #d7d4cf;
     color: #ffffff;
@@ -132,11 +151,9 @@
 }
 
 .btn {
-    width: 225px;
-    height: 60px;
     border-radius: 5px;
     line-height: 100%;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .left {
@@ -148,6 +165,8 @@
 }
 
 .other-actions {
+    width: 170px;
+    height: 60px;
     background-color: #e4e4e4;
     color: #868585;
     border: thin solid #d0d0d0;

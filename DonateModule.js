@@ -5,7 +5,8 @@ var Data = {
     CurrentAmount: 3000,
     EndDate: new Date(2018, 5, 25, 23, 59),
     NumDonors: 70,
-    TimeEnded: false
+    TimeEnded: false,
+    MessageActive: false
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -55,13 +56,13 @@ function UpdateWording() {
 
     //Update the goal left to go
     if (Data.GoalAmount > Data.CurrentAmount) {
-        goalMessElem.innerHTML = "We need $" + (Data.GoalAmount - Data.CurrentAmount).toString() + " more to reach our goal!";
+        goalMessElem.innerHTML = "We need <span class=\"font-bold\">$" + (Data.GoalAmount - Data.CurrentAmount).toString() + "</span> more to reach our goal!";
     }
     else if (Data.GoalAmount == Data.CurrentAmount) {
         goalMessElem.innerHTML = "We have met our goal!";
     }
     else {
-        goalMessElem.innerHTML = "We have exceeded our goal by $" + (Data.CurrentAmount - Data.GoalAmount).toString() + "!";
+        goalMessElem.innerHTML = "We have exceeded our goal by <span class=\"font-bold\">$" + (Data.CurrentAmount - Data.GoalAmount).toString() + "</span>!";
     }
 
     //Update number of donors
@@ -88,6 +89,19 @@ function ShowMessage() {
 function HideMessage() {
     var container = document.getElementById("goal-message-container");
     container.style.display = "none";
+}
+
+//Show/Hide touchscreen exception
+
+function TouchDetection() {
+    if (Data.MessageActive) {
+        HideMessage();
+        Data.MessageActive = false;
+    }
+    else {
+        ShowMessage();
+        Data.MessageActive = true;
+    }
 }
 
 //Handle form submission
